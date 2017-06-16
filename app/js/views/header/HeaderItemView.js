@@ -1,11 +1,11 @@
 /**
- * 
+ *
  * @type Module marionette|Module marionette
  */
 var Marionette = require('marionette');
 var Templates = require('joko-templates');
 
-var HeaderItemView = Marionette.ItemView.extend({
+var HeaderItemView = Marionette.View.extend({
     templateHelpers: function () {
         var user = window.App.session.user;
         return {
@@ -31,7 +31,7 @@ var HeaderItemView = Marionette.ItemView.extend({
                 // mejor hacer un reinicio, ya con la sesión
                 // invalidada
                 window.location.href = '/';
-                
+
             }
         });
     }
