@@ -1,11 +1,11 @@
 /**
- * 
+ *
  * @type Module marionette|Module marionette
  */
 var Marionette = require('marionette');
 require('parsleyjs');
 
-// TODO Esto funciona mágicamente y 
+// TODO Esto funciona mágicamente y
 // no se ni como. Investigar mejor
 // y documentar
 require('parsleyjs/dist/i18n/es');
@@ -16,7 +16,7 @@ var notifier   = require('lib/notifier');
 
 var ENTER_KEY = 13;
 
-var LoginItemView = Marionette.ItemView.extend({
+var LoginItemView = Marionette.View.extend({
     template: Templates.loginItemView,
     events: {
         'click #login-btn': 'onLoginAttempt',
@@ -39,7 +39,7 @@ var LoginItemView = Marionette.ItemView.extend({
             event.preventDefault();
         }
         var valid = this.$('#login-form').parsley().validate();
-        
+
         if (valid) {
             userData = {
                 email: this.$('#login-mail-input').val(),
